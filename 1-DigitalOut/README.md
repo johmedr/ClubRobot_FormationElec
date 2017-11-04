@@ -17,6 +17,9 @@ Après avoir importé le projet nommé "Blinky" dans l'IDE en ligne de mbed,
 vous allez configurer pour pouvoir générer du code pour la carte initiation. 
 Dans la partie "Selecting a board", choisissez la carte "Nucleo-L432KC", puis
 validez. 
+Le code qui apparaît est expliqué ci-dessous. Un bon plan est de finir le tuto. de mbed, 
+télécharger et tester l'exécutable. Si ça marche, vous pouvez lire la suite, sinon, checkez [la dernière 
+section](https://github.com/yop0/ClubRobot_FormationElec/tree/master/1-DigitalOut#troubleshooting).
 
 ### *L'inclusion préprocesseur* 
 
@@ -133,8 +136,8 @@ Le code `while(1)` (i.e. `tant que vrai, faire`) créé une boucle infinie. Le p
 clignoter une led, opération pour laquelle on a pas défini de date d'expiration : il faut donc que 
 la led clignotte pour une durée infinie, tant que la carte est alimentée. 
 
-En général, il est très rare que l'on souhaite que le code de la fonction `main()` ne s'éxecute une seule fois. 
-Les programmes sont souvent découpés en deux phases : 
+En général, il est très rare que l'on souhaite que le code de la fonction `main()` ne s'éxecute qu'une seule fois, 
+pour une application sur microcontôleur. Les programmes sont donc souvent découpés en deux phases : 
   * une phase *d'initialisation*, qui permet de créer et de préparer ce dont le microcontrôleur à besoin, 
   * une phase *d'exécution*, de durée infinie, pendant laquelle le microcontrôleur effectue certaines tâches 
   de manière répétitive. 
@@ -142,7 +145,7 @@ Les programmes sont souvent découpés en deux phases :
 #### *Les instructions de la boucle* 
 Les lignes `myled = 1` et `myled = 0` utilisent un comportement que nous n'aborderons pas en détail 
 pour le moment : une surcharge de l'opérateur `=`. Il faut juste se dire que, si à priori l'opération 
-"objet de type DigitalOut = int" parraît abhérante, un comportement à adopter dans ce cas à été défini.
+`objet de type DigitalOut = int` parraît abhérante, un comportement à adopter dans ce cas à été défini.
 
 Ce comportement est du type : 
 ```
@@ -158,6 +161,32 @@ Ainsi, on peut comprendre le code suivant :
   myled = 0; // LED is OFF
   wait(1.0); // 1 sec
 ```
+
+## À vos claviers ! 
+
+Normalement, vous êtes maintenant capables de comprendre et de modifier le code du projet ! 
+L'idée va donc être de jouer avec, pour revoir les bases de la programmation en C++ (on codera
+des classes plus tard, là on va rester sur des tableaux, des fonctions, les bases quoi !). 
+
+Le but est de créer une sortie numérique pour chaque led connectée sur la carte initiation, puis
+de passer un tableau représentant l'état de chaque led à une fonction, qui va affecter l'état
+de chaque led. 
+
+La fonction ne retourne pas d'argument, et prend en argument :
+ * le tableau d'état, constitué de nombres booléens, 
+ * le tableau des leds, qui contient ce qu'il faut pour allumer/éteindre les leds. Aucune structure imposée, 
+ débrouillez-vous ! 
+ 
+Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans [ce fichier](). 
+
+### *Pour aller plus loin* 
+Créez une classe `LedsSet`, qui permet de contruire un objet représentant toutes les leds de la 
+carte initiation. Cette classe possède des méthodes pour allumer ou éteindre toutes les leds, 
+et une méthode permettant d'affecter un tableau d'état aux leds. 
+<details>
+<summary>Indice</summary>
+Servez-vous de la fonction implémentée dans la partie précédente !
+</details>
 
 ## Troubleshooting
 Il est possible que le programme Blinky ne fonctionne pas. Dans ce cas, il faut importer 
