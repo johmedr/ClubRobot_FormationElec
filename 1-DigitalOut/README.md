@@ -82,7 +82,7 @@ DigitalOut myled(LED1);
   Et là, c'est la cata : on ne sait pas ce qui va se passer quand on va écrire un niveau logique sur 
   une broche qui n'existe pas ... Et si ça faisait exploser la carte ? 
 
-  Pour pallier à celà, le C++ utilise le principe *d'encapsulation des données* à travers les _classes_. 
+  Pour pallier à ça, le C++ utilise le principe *d'encapsulation des données* à travers les _classes_. 
   L'encapsulation de données, c'est faire en sorte que personne ne vienne gratouiller à sa sauce dans l'objet si on 
   ne l'a pas autorisé. On fournit à la place des fonctions de manipulation, appellées *méthodes*, pour modifier 
   l'objet. 
@@ -90,7 +90,7 @@ DigitalOut myled(LED1);
   Ainsi, si on fait le parallèle avec l'automobile : 
    * une *classe*, c'est par exemple une voiture : ça définit des propriétés communes (4 roues, un volant, un 
    moteur)
-   * une *instance de classe*, c'est *cette* voiture : ça définit des un ensemble de variables propres à cette 
+   * une *instance de classe*, c'est *cette* voiture : ça définit un ensemble de variables propres à cette 
    voiture 
    (nombre de chevaux, longueur, ...) 
    * une *variable membre*, c'est une des propriétés de la voiture (par exemple sa vitesse actuelle, le débit 
@@ -107,7 +107,7 @@ DigitalOut myled(LED1);
   à une broche, qui possède des méthodes réalisant les modifications d'état sur la broche en question. 
   Et c'est tout ! Pour bien voir ceci, nous vous conseillons de lire 
   [ce fichier](https://github.com/ARMmbed/mbed-os/blob/master/drivers/DigitalOut.h), qui définit la classe 
-  DigitalOut`. 
+  `DigitalOut`. 
 
   Retrouvez d'autres explications, ainsi que la syntaxe pour la définition d'une classe sur
    [cette page](https://openclassrooms.com/courses/programmez-avec-le-langage-c/les-classes-partie-1-2). 
@@ -181,9 +181,10 @@ La fonction ne retourne pas d'argument, et prend en argument :
 Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans 
 [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/0-Prerequis/Pinout_CarteInitiation.pdf).
 
-Si vous êtes coincés, vous pouvez utiliser le contenu de [ce fichier](), en remplissant juste la fonction
- `affecterEtat()`. 
-La correction se trouve dans [ce fichier](). 
+Si vous êtes coincés, vous pouvez utiliser le contenu de [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut/1-DigitalOutHelp.c), en remplissant juste la fonction
+ `affecterEtat()`. [Ceci](http://en.cppreference.com/w/c/language/array_initialization) peut également vous simplifier la vie. La correction se trouve dans [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut/1-DigitalOutCorrige.c). 
+
+
 
 ### *Pour aller plus loin* :+1: 
 Créez une classe `LedsSet`, qui permet de contruire un objet représentant toutes les leds de la 
