@@ -78,10 +78,12 @@ DigitalOut myled(LED1);
   ``` 
   Et là, c'est la cata : on ne sait pas ce qui va se passer quand on va écrire un niveau logique sur 
   une broche qui n'existe pas ... Et si ça faisait exploser la carte ? 
+
   Pour pallier à celà, le C++ utilise le principe *d'encapsulation des données* à travers les _classes_. 
   L'encapsulation de données, c'est faire en sorte que personne ne vienne gratouiller à sa sauce dans l'objet si on 
   ne l'a pas autorisé. On fournit à la place des fonctions de manipulation, appellées *méthodes*, pour modifier 
   l'objet. 
+
   Ainsi, si on fait le parallèle avec l'automobile : 
    * une classe, c'est une voiture : ça définit des propriétés communes (4 roues, un volant, un moteur)
    * une instance de classe, c'est *cette* voiture : ça définit des un ensemble de variables propres à cette voiture 
@@ -105,6 +107,57 @@ DigitalOut myled(LED1);
   Retrouvez d'autres explications, ainsi que la syntaxe pour la définition d'une classe sur
    [cette page](https://openclassrooms.com/courses/programmez-avec-le-langage-c/les-classes-partie-1-2). 
 
+
+### *La fonction principale*
+
+Continuons la lecture du code ... 
+
+```C++
+int main() {
+    while(1) {
+        myled = 1; // LED is ON
+        wait(0.2); // 200 ms
+        myled = 0; // LED is OFF
+        wait(1.0); // 1 sec
+    }
+}
+```
+
+Ceci est la fonction principale du code, c'est elle qui sera lancée en première et qui définira
+ce que notre programme va faire. 
+
+À l'intérieur, on trouve une boucle `while(1)`, et à l'intérieur de cette boucle des instructions. 
+
+#### *La boucle infinie* 
+Le code `while(1)` (i.e. `tant que vrai, faire`) créé une boucle infinie. Le programme est censé faire
+clignoter une led, opération pour laquelle on a pas défini de date d'expiration : il faut donc que 
+la led clignotte pour une durée infinie, tant que la carte est alimentée. 
+
+En général, il est très rare que l'on souhaite que le code de la fonction `main()` ne s'éxecute une seule fois. 
+Les programmes sont souvent découpés en deux phases : 
+  * une phase *d'initialisation*, qui permet de créer et de préparer ce dont le microcontrôleur à besoin, 
+  * une phase *d'exécution*, de durée infinie, pendant laquelle le microcontrôleur effectue certaines tâches 
+  de manière répétitive. 
+
+#### *Les instructions de la boucle* 
+Les lignes `myled = 1` et `myled = 0` utilisent un comportement que nous n'aborderons pas en détail 
+pour le moment : une surcharge de l'opérateur `=`. Il faut juste se dire que, si à priori l'opération 
+"objet de type DigitalOut = int" parraît abhérante, un comportement à adopter dans ce cas à été défini.
+
+Ce comportement est du type : 
+```
+Si : on essaye d'affecter un entier 'x' à un DigitalOut 'd',
+Alors : appeler la méthode "d.write(x)" permettant
+d'écrire l'état 'x' sur la broche 'd'.
+```
+
+Ainsi, on peut comprendre le code suivant : 
+```C++
+  myled = 1; // LED is ON
+  wait(0.2); // 200 ms
+  myled = 0; // LED is OFF
+  wait(1.0); // 1 sec
+```
 
 ## Troubleshooting
 Il est possible que le programme Blinky ne fonctionne pas. Dans ce cas, il faut importer 
