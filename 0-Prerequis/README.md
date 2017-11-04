@@ -21,7 +21,7 @@ La documentation fournie par mbed peut être très utile pour comprendre
 l'utilisation des librairies (ensemble de fonctions, d'objets, ...). 
 Nous vous invitons donc à aller consulter : 
    * [la doc. de mbed](https://os.mbed.com/handbook/Homepage) pour les fonctions de base, 
-   * [https://github.com/ARMmbed/mbed-os](le code de mbed-os), la librairie de base utilisée (notamment 
+   * [le code de mbed-os](https://github.com/ARMmbed/mbed-os), la librairie de base utilisée (notamment 
    les fichiers dans le dossier `drivers`, contenant les briques de base). 
 
 ## Matériel 
