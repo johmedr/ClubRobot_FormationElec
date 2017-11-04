@@ -33,7 +33,7 @@ Regardons-le plus attentivement.
 La première ligne permet d'inclure la librairie mbed : on pourra donc utiliser les fonctions 
 présentées en bas de [cette page](https://os.mbed.com/handbook/Homepage). 
 
-> ### *Ce qui se passe :*
+> ### *Ce qu'il se passe :*
   > Avant la compilation, un moteur appelé *préprocesseur* lit tous les fichiers du projet, à la recherche
   de _directives de préprocesseur_ (aussi appelées *macros*). Ce sont les seules lignes commencant par `#`, 
   et elles stipulent une modification à faire sur les fichiers de code source (c'est-à-dire que ces opérations
@@ -177,7 +177,7 @@ La fonction ne retourne pas d'argument, et prend en argument :
  * le tableau des leds, qui contient ce qu'il faut pour allumer/éteindre les leds. Aucune structure imposée, 
  débrouillez-vous ! 
  
-Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans [ce fichier](). 
+Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/0-Prerequis/Pinout_CarteInitiation.pdf). 
 
 ### *Pour aller plus loin* 
 Créez une classe `LedsSet`, qui permet de contruire un objet représentant toutes les leds de la 
@@ -185,7 +185,7 @@ carte initiation. Cette classe possède des méthodes pour allumer ou éteindre 
 et une méthode permettant d'affecter un tableau d'état aux leds. 
 <details>
 <summary>Indice</summary>
-Servez-vous de la fonction implémentée dans la partie précédente ! ;) 
+Servez-vous de la fonction implémentée dans la partie précédente ! ;)
 </details>
 
 ## Troubleshooting
