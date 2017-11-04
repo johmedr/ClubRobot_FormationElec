@@ -29,13 +29,17 @@ Regardons-le plus attentivement.
 La première ligne permet d'inclure la librairie mbed : on pourra donc utiliser les fonctions 
 présentées en bas de [cette page](https://os.mbed.com/handbook/Homepage). 
 
-### *Ce qui se passe :* 
-> Avant la compilation, un moteur appelé *préprocesseur* lit tous les fichiers du projet, à la recherche
-de _directives de préprocesseur_ (aussi appelées *macros*). Ce sont les seules lignes commencant par `#`, 
-et elles stipulent une modification à faire sur les fichiers de code source (c'est-à-dire que ces opérations
-modifient directement le code). Pour le coup, la directive `#include "nom_du_fichier"` permet de demander au 
-préprocesseur de copier-coller le fichier `nom_du_ficher` tel quel à l'endroit du `#include`. 
-> Pour les curieux, n'hésitez pas à lire [la page consacrée sur OpenClassroom](https://openclassrooms.com/courses/apprenez-a-programmer-en-c/le-preprocesseur).
+<details>
+  <summary>Ce qui se passe :</summary>
+  <p>
+  > Avant la compilation, un moteur appelé *préprocesseur* lit tous les fichiers du projet, à la recherche
+  de _directives de préprocesseur_ (aussi appelées *macros*). Ce sont les seules lignes commencant par `#`, 
+  et elles stipulent une modification à faire sur les fichiers de code source (c'est-à-dire que ces opérations
+  modifient directement le code). Pour le coup, la directive `#include "nom_du_fichier"` permet de demander au 
+  préprocesseur de copier-coller le fichier `nom_du_ficher` tel quel à l'endroit du `#include`. 
+  > Pour les curieux, n'hésitez pas à lire [la page consacrée sur OpenClassroom](https://openclassrooms.com/courses/apprenez-a-programmer-en-c/le-preprocesseur).
+  </p>
+</details>
 
 
 
