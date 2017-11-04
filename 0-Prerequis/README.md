@@ -12,7 +12,7 @@ La formation requiert un niveau de base en C, c'est-à-dire :
 
 Si vous souhaitez acquérir ou approfondir ces compétences, on 
 ne peut que vous recommander de suivre les deux premières parties
-du [https://openclassrooms.com/courses/apprenez-a-programmer-en-c](cours sur OpenClassroom). 
+du [cours sur OpenClassroom](https://openclassrooms.com/courses/apprenez-a-programmer-en-c). 
 
 Les notions de programmation orientée objet seront abordées au fur et à mesure 
 de la formation.
@@ -41,7 +41,7 @@ chronologiquement l'ordre présenté ci-dessus.
 
 ## Logiciel
 
-Nous utilisons l'applicatio mbed, accessible [https://os.mbed.com/compiler/](en ligne), pour 
+Nous utilisons l'applicatio mbed, accessible [en ligne](https://os.mbed.com/compiler/), pour 
 écrire le code du microcontrôleur, ainsi que pour compiler (transformer le code en suite 
 d'instructions binaires pour le STM32). 
 
