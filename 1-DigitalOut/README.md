@@ -1,8 +1,8 @@
 # 1 - DigitalOut
 ## Objectif
 
-Le but içi est de commencer à mettre les mains de le cambouis. Pour 
-celà on va d'abord suivre le tutoriel de base de mbed-os, pour configurer
+Le but ici est de commencer à mettre les mains de le cambouis. Pour 
+cela on va d'abord suivre le tutoriel de base de mbed-os, pour configurer
 correctement l'application, puis importer un premier code pour faire clignoter 
 une led (dingue !). 
 Ensuite, nous mettrons en place un petit code nous permettant de déplacer la Led allumée
@@ -23,7 +23,7 @@ section](https://github.com/yop0/ClubRobot_FormationElec/tree/master/1-DigitalOu
 
 ### *L'inclusion préprocesseur* 
 
-Le code présenté içi est plutôt minimal, et permet de faire clignoter une led. 
+Le code présenté ici est plutôt minimal, et permet de faire clignoter une led. 
 Regardons-le plus attentivement. 
 
 ```C++
@@ -88,13 +88,15 @@ DigitalOut myled(LED1);
   l'objet. 
 
   Ainsi, si on fait le parallèle avec l'automobile : 
-   * une classe, c'est une voiture : ça définit des propriétés communes (4 roues, un volant, un moteur)
-   * une instance de classe, c'est *cette* voiture : ça définit des un ensemble de variables propres à cette voiture 
+   * une *classe*, c'est par exemple une voiture : ça définit des propriétés communes (4 roues, un volant, un 
+   moteur)
+   * une *instance de classe*, c'est *cette* voiture : ça définit des un ensemble de variables propres à cette 
+   voiture 
    (nombre de chevaux, longueur, ...) 
-   * une variable membre, c'est une des propriétés de la voiture (par exemple sa vitesse actuelle, le débit 
+   * une *variable membre*, c'est une des propriétés de la voiture (par exemple sa vitesse actuelle, le débit 
    d'injection), 
-   * une méthode, c'est quelque chose que l'utilisateur peut utiliser pour manipuler l'instance de classe : pour la
-   voiture, il s'agit du volant, des pédales, ... 
+   * une *méthode*, c'est quelque chose que l'utilisateur peut utiliser pour manipuler l'instance de classe : 
+   pour la voiture, il s'agit du volant, des pédales, ... 
 
 
   En tant que conducteurs, on va donc utiliser les pédales (*méthodes* accessible par l'utilisateur) 
@@ -134,9 +136,9 @@ ce que notre programme va faire.
 #### *La boucle infinie* 
 Le code `while(1)` (i.e. `tant que vrai, faire`) créé une boucle infinie. Le programme est censé faire
 clignoter une led, opération pour laquelle on a pas défini de date d'expiration : il faut donc que 
-la led clignotte pour une durée infinie, tant que la carte est alimentée. 
+la led clignote pour une durée infinie, tant que la carte est alimentée. 
 
-En général, il est très rare que l'on souhaite que le code de la fonction `main()` ne s'éxecute qu'une seule fois, 
+En général, il est très rare que l'on souhaite que le code de la fonction `main()` ne s'exécute qu'une seule fois, 
 pour une application sur microcontôleur. Les programmes sont donc souvent découpés en deux phases : 
   * une phase *d'initialisation*, qui permet de créer et de préparer ce dont le microcontrôleur à besoin, 
   * une phase *d'exécution*, de durée infinie, pendant laquelle le microcontrôleur effectue certaines tâches 
