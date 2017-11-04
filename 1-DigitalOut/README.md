@@ -179,7 +179,7 @@ La fonction ne retourne pas d'argument, et prend en argument :
  
 Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/0-Prerequis/Pinout_CarteInitiation.pdf). 
 
-### *Pour aller plus loin* 
+### *Pour aller plus loin* :+1: 
 Créez une classe `LedsSet`, qui permet de contruire un objet représentant toutes les leds de la 
 carte initiation. Cette classe possède des méthodes pour allumer ou éteindre toutes les leds, 
 et une méthode permettant d'affecter un tableau d'état aux leds. 
