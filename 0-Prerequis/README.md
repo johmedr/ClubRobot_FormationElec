@@ -10,8 +10,12 @@ La formation requiert un niveau de base en C, c'est-à-dire :
    * implémentation de functions, 
    * tableaux et pointeurs. 
 
-La programmation orientée objet sera abordée au fur et à mesure 
-de la formation. 
+Si vous souhaitez acquérir ou approfondir ces compétences, on 
+ne peut que vous recommander de suivre les deux premières parties
+du [https://openclassrooms.com/courses/apprenez-a-programmer-en-c](cours sur OpenClassroom). 
+
+Les notions de programmation orientée objet seront abordées au fur et à mesure 
+de la formation.
 
 ## Matériel 
 
