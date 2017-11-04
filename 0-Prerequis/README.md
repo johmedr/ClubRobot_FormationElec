@@ -1,6 +1,6 @@
 # 0 - Prerequis
 
-## Compétences 
+## Compétences et ressources utiles
 
 Le language C++, basé sur la syntaxe de C, est utilisé pour 
 programmer avec mbed. 
@@ -15,7 +15,14 @@ ne peut que vous recommander de suivre les deux premières parties
 du [cours sur OpenClassroom](https://openclassrooms.com/courses/apprenez-a-programmer-en-c). 
 
 Les notions de programmation orientée objet seront abordées au fur et à mesure 
-de la formation.
+de la formation. 
+
+La documentation fournie par mbed peut être très utile pour comprendre 
+l'utilisation des librairies (ensemble de fonctions, d'objets, ...). 
+Nous vous invitons donc à aller consulter : 
+   * [la doc. de mbed](https://os.mbed.com/handbook/Homepage) pour les fonctions de base, 
+   * [https://github.com/ARMmbed/mbed-os](le code de mbed-os), la librairie de base utilisée (notamment 
+   les fichiers dans le dossier `drivers`, contenant les briques de base). 
 
 ## Matériel 
 
