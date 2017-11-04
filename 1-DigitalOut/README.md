@@ -185,7 +185,7 @@ carte initiation. Cette classe possède des méthodes pour allumer ou éteindre 
 et une méthode permettant d'affecter un tableau d'état aux leds. 
 <details>
 <summary>Indice</summary>
-Servez-vous de la fonction implémentée dans la partie précédente !
+Servez-vous de la fonction implémentée dans la partie précédente ! ;) 
 </details>
 
 ## Troubleshooting
