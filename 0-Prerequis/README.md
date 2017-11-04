@@ -12,10 +12,10 @@ La formation requiert un niveau de base en C, c'est-à-dire :
 
 Si vous souhaitez acquérir ou approfondir ces compétences, on 
 ne peut que vous recommander de suivre les deux premières parties
-du [cours sur OpenClassroom](https://openclassrooms.com/courses/apprenez-a-programmer-en-c). 
+du [cours d'OpenClassroom](https://openclassrooms.com/courses/apprenez-a-programmer-en-c). 
 
 Les notions de programmation orientée objet seront abordées au fur et à mesure 
-de la formation. 
+de la formation. Comme ressource principale, nous vous conseillons le [cours d'OpenClassroom sur le C++](https://openclassrooms.com/courses/programmez-avec-le-langage-c). 
 
 La documentation fournie par mbed peut être très utile pour comprendre 
 l'utilisation des librairies (ensemble de fonctions, d'objets, ...). 
