@@ -177,7 +177,7 @@ La fonction ne retourne pas d'argument, et prend en argument :
  * le tableau des leds, qui contient ce qu'il faut pour allumer/éteindre les leds. Aucune structure imposée, 
  débrouillez-vous ! 
  
-Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans [ce fichier](). 
+Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/0-Prerequis/Pinout_CarteInitiation.pdf). 
 
 ### *Pour aller plus loin* 
 Créez une classe `LedsSet`, qui permet de contruire un objet représentant toutes les leds de la 
@@ -185,7 +185,7 @@ carte initiation. Cette classe possède des méthodes pour allumer ou éteindre 
 et une méthode permettant d'affecter un tableau d'état aux leds. 
 <details>
 <summary>Indice</summary>
-Servez-vous de la fonction implémentée dans la partie précédente !
+Servez-vous de la fonction implémentée dans la partie précédente ! ;)
 </details>
 
 ## Troubleshooting
