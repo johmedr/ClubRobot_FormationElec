@@ -182,8 +182,9 @@ Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds 
 [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/0-Prerequis/Pinout_CarteInitiation.pdf).
 
 Si vous êtes coincés, vous pouvez utiliser le contenu de [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut/1-DigitalOutHelp.c), en remplissant juste la fonction
- `affecterEtat()`. 
-La correction se trouve dans [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut/1-DigitalOutCorrige.c). 
+ `affecterEtat()`. [Ceci](http://en.cppreference.com/w/c/language/array_initialization) peut également vous simplifier la vie. La correction se trouve dans [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut/1-DigitalOutCorrige.c). 
+
+
 
 ### *Pour aller plus loin* :+1: 
 Créez une classe `LedsSet`, qui permet de contruire un objet représentant toutes les leds de la 
