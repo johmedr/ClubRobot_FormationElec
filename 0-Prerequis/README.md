@@ -6,9 +6,9 @@ Le language C++, basé sur la syntaxe de C, est utilisé pour
 programmer avec mbed. 
 
 La formation requiert un niveau de base en C, c'est-à-dire :
-	- types et opérations élémentaires, 
-	- implémentation de functions, 
-	- tableaux et pointeurs. 
+   * types et opérations élémentaires, 
+   * implémentation de functions, 
+   * tableaux et pointeurs. 
 
 La programmation orientée objet sera abordée au fur et à mesure 
 de la formation. 
@@ -25,12 +25,12 @@ dont l'utilisation est très proche d'un Arduino.
 
 Les entrées/sorties de la carte ont été connectées à des composants 
 électroniques pour intéragir avec elle : 
-	- des leds (sortie numérique), 
-	- des boutons poussoirs (entrée numérique), 
-	- des potentiomètre (entrée analogique), 
-	- des connecteurs pour brancher des moteurs (sortie numérique pilotée en PWM), 
-	- des connecteurs pour l'UART (communication UART), 
-	- des connecteurs pour le CAN (communication CAN). 
+   * des leds (sortie numérique), 
+   * des boutons poussoirs (entrée numérique), 
+   * des potentiomètre (entrée analogique), 
+   * des connecteurs pour brancher des moteurs (sortie numérique pilotée en PWM), 
+   * des connecteurs pour l'UART (communication UART), 
+   * des connecteurs pour le CAN (communication CAN). 
 
 Ces différents éléments seront interfacés et utilisés au fil de la formation, en suivant
 chronologiquement l'ordre présenté ci-dessus. 
