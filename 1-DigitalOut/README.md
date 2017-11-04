@@ -90,9 +90,20 @@ DigitalOut myled(LED1);
    d'injection), 
    * une méthode, c'est quelque chose que l'utilisateur peut utiliser pour manipuler l'instance de classe : pour la
    voiture, il s'agit du volant, des pédales, ... 
+
+
   En tant que conducteurs, on va donc utiliser les pédales (*méthodes* accessible par l'utilisateur) 
   pour modifier des propriétés de la voiture comme la vitesse ou le débit d'injection (*variables membres*,
   inaccessibles par l'utilisateur).
+
+  Enfin, on revient à notre `DigitalOut`. Il s'agit donc d'une classe représentant une sortie digitale connectée 
+  à une broche, qui possède des méthodes réalisant les modifications d'état sur la broche en question. 
+  Et c'est tout ! Pour bien voir ceci, nous vous conseillons de lire 
+  [ce fichier](https://github.com/ARMmbed/mbed-os/blob/master/drivers/DigitalOut.h), qui définit la classe 
+  DigitalOut`. 
+
+  Retrouvez d'autres explications, ainsi que la syntaxe pour la définition d'une classe sur
+   [cette page](https://openclassrooms.com/courses/programmez-avec-le-langage-c/les-classes-partie-1-2). 
 
 
 ## Troubleshooting
