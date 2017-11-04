@@ -178,7 +178,12 @@ La fonction ne retourne pas d'argument, et prend en argument :
  * le tableau d'état, constitué de nombres booléens, 
  * une structure de données représentant des leds, qui contient ce qu'il faut pour allumer/éteindre les leds. Aucune structure imposée, débrouillez-vous ! 
  
-Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/0-Prerequis/Pinout_CarteInitiation.pdf). 
+Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans 
+[ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/0-Prerequis/Pinout_CarteInitiation.pdf).
+
+Si vous êtes coincés, vous pouvez utiliser le contenu de [ce fichier](), en remplissant juste la fonction
+ `affecterEtat()`. 
+La correction se trouve dans [ce fichier](). 
 
 ### *Pour aller plus loin* :+1: 
 Créez une classe `LedsSet`, qui permet de contruire un objet représentant toutes les leds de la 
