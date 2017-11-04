@@ -191,3 +191,5 @@ Servez-vous de la fonction implémentée dans la partie précédente ! ;)
 ## Troubleshooting
 Il est possible que le programme Blinky ne fonctionne pas. Dans ce cas, il faut importer 
 depuis mbed le programme "Nucleo_blink_Led" (`Import > Onglet Programs > Chercher et importer "Nucleo_blink_led"`).
+
+### [< Précédent](https://github.com/yop0/ClubRobot_FormationElec/tree/master/0-Prerequis) | [Suivant >](https://github.com/yop0/ClubRobot_FormationElec/tree/master/2-DigitalIn)
