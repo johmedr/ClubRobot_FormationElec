@@ -68,6 +68,34 @@ DigitalOut myled(LED1);
   ```
   
 #### Ce que permet le C++ 
+  Ce que l'on peut constater dans la solution précédente, c'est que l'utilisateur peut modifier *à la main* la 
+  valeur des variables interne à notre structure. Et ça, c'est problématique. 
+  Imaginons qu'on écrive une fonction permettant de vérifier que la broche passée à la fonction `connecterSortie`
+  existe bien. En utilisant cette fonction pour initialiser une structure `SortieDigitale`, on serait sûrs 
+  que le champ `numeroBroche` correspond à une broche existante. 
+  Cependant, rien ne nous empêche d'écrire :
+  ```C
+  	maSortieDigitale.numeroBroche = 42; // On suppose que la broche 42 n'existe pas, of course
+  ``` 
+  Et là, c'est la cata : on ne sait pas ce qui va se passer quand on va écrire un niveau logique sur 
+  une broche qui n'existe pas ... Et si ça faisait exploser la carte ? 
+  Pour pallier à celà, le C++ utilise le principe *d'encapsulation des données* à travers les _classes_. 
+  L'encapsulation de données, c'est faire en sorte que personne ne vienne gratouiller à sa sauce dans l'objet si on 
+  ne l'a pas autorisé. On fournit à la place des fonctions de manipulation, appellées *méthodes*, pour modifier 
+  l'objet. 
+  Ainsi, si on fait le parallèle avec l'automobile : 
+   * une classe, c'est une voiture : ça définit des propriétés communes (4 roues, un volant, un moteur)
+   * une instance de classe, c'est *cette* voiture : ça définit des un ensemble de variables propres à cette voiture 
+   (nombre de chevaux, longueur, ...) 
+   * une variable membre, c'est une des propriétés de la voiture (par exemple sa vitesse actuelle, le débit 
+   d'injection), 
+   * une méthode, c'est quelque chose que l'utilisateur peut utiliser pour manipuler l'instance de classe : pour la
+   voiture, il s'agit du volant, des pédales, ... 
+  En tant que conducteurs, on va donc utiliser les pédales (*méthodes* accessible par l'utilisateur) 
+  pour modifier des propriétés de la voiture comme la vitesse ou le débit d'injection (*variables membres*,
+  inaccessibles par l'utilisateur).
+
+
 ## Troubleshooting
 Il est possible que le programme Blinky ne fonctionne pas. Dans ce cas, il faut importer 
 depuis mbed le programme "Nucleo_blink_Led" (`Import > Onglet Programs > Chercher et importer "Nucleo_blink_led"`).
