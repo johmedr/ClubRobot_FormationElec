@@ -181,9 +181,9 @@ La fonction ne retourne pas d'argument, et prend en argument :
 Vous pouvez trouver le numéro des broches auxquelles sont connectées les leds dans 
 [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/0-Prerequis/Pinout_CarteInitiation.pdf).
 
-Si vous êtes coincés, vous pouvez utiliser le contenu de [ce fichier](), en remplissant juste la fonction
+Si vous êtes coincés, vous pouvez utiliser le contenu de [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut/1-DigitalOutHelp.c), en remplissant juste la fonction
  `affecterEtat()`. 
-La correction se trouve dans [ce fichier](). 
+La correction se trouve dans [ce fichier](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut/1-DigitalOutCorrige.c). 
 
 ### *Pour aller plus loin* :+1: 
 Créez une classe `LedsSet`, qui permet de contruire un objet représentant toutes les leds de la 
