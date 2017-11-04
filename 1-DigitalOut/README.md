@@ -63,9 +63,8 @@ DigitalOut myled(LED1);
   On aurait ensuite développé nos deux fonctions de manipulation de structure, `allumer()` et `eteindre()`, qui nous auraient
   permis de manipuler l'état de la broche, sans avoir à le faire à chaque fois à la main. 
   
-  On se serait donc retrouvé avec [ce code]()
- 
-  ```
+  On se serait donc retrouvé avec [ce code](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut/StructSortieDigitale.c).
+
   
 #### Ce que permet le C++ 
   Ce que l'on peut constater dans la solution précédente, c'est que l'utilisateur peut modifier *à la main* la 
