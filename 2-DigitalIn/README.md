@@ -34,7 +34,7 @@ private: 		// On repasse en portée "privée". Personne en dehors de la classe n
 }; // Ne pas oublier ce point-virgule
 ```
 
-## Le constructeurs
+## Le constructeur
 
 Le constructeur sert à déclarer comment le programme doit initialiser un objet d'une classe
 donnée, avec une jeu d'arguments donné. 
@@ -48,12 +48,12 @@ public:
 //  ^--- Comme vous pouver le voir, le constructeur est une *méthode* particulière, sans type de retour
 // 	Son nom est forcément celui de la classe
 	{
-		// do stuff
+		// do construction stuff here
 	} 
 
 	DigitalPortOut(PinName pin)
 	{
-		// do other stuff
+		// do other construction stuff here
 	}
 }
 ```
@@ -61,6 +61,23 @@ public:
 Lors de la création de constructeur, la question à se poser est : 
 > "à partir de quelles données fournies par l'utilisateur peut/doit on 
 initialiser l'objet et ses membres ?"
+
+#### Construire un objet
+
+Une fois le constructeur défini, on peut s'en servir pour instancier des objets
+de notre classe. 
+
+Ceci se passe comme cela : 
+```C++
+// Variables classiques
+DigitalPortOut monPorc; 	// On utilise aucun argument, appel au constructeur "DigitalPortOut()"
+DigitalPortOut monSecondPorc(A3); // On utilise "DigitalPortOut(PinName pin)"
+
+// Pointeurs
+DigitalPortOut * ptrSurPorc1 = new DigitalPortOut(); // On alloue de la mémoire à un pointeur, sans arg.
+DigitalPortOut * ptrSurPorc2 = new DigitalPortOut(D3); // On alloue de la mémoire à un pointeur avec un arg.
+
+```
 
 #### *La liste d'initialisation*
 
@@ -99,6 +116,62 @@ DigitalPortOut(PinName pin) : connectedPin(pin), statePin(false)
 {} // <- Le corps de la fonction est vite, on a juste construit des objets.
 ```
 
+
+
+
+## Le destructeur
+On a appris la syntaxe du constructeur, permettant d'indiquer comment initialiser notre classe. 
+Maintenant, on va voir comment indiquer au programme la manière de détruire un objet de notre classe. 
+
+Pour cela, on va utiliser le destructeur, dont la syntaxe est la suivante. 
+
+```C++
+class DigitalPortOut
+{
+public: 
+//  v--- Le nom du destructeur est le nom de la classe avec un tilde ('~') devant. 
+	~DigitalPortOut()
+	// 				^--- La liste d'argument du destructeur DOIT être vide. 
+	{
+		// do destruction stuff here
+	}
+}
+``` 
+
+Son intérêt est de désallouer la mémoire qui aurait pu être explicitement allouée lors de la construction
+ou l'utilisation de l'objet. 
+
+Ceci est illustré dans le code suivant : 
+
+```C++
+// Classe représentant un polygone
+class Polygone
+{
+private: 
+	int nombreCotes; 	// avec un certain nombre de côtés, 
+	int * longueurCotes; // chacun ayant une certaine longueur (notre pointeur représente la premiere case d'un tableau) 
+						 // (Si cette ligne vous pose problème, revoyez le lien entre tableau et pointeur)
+public: 
+	
+	// À la construction d'un polygone 
+	Polygone(int nCotes) : 
+		nombreCotes(nCotes),   				// On construit nombreCotes à partir de nCotes
+		longueurCotes(new int[nCotes]) 		// On alloue de la mémoire pour pouvoir stocker la longueur de chaque côté
+	{}
+
+	// À la destruction d'un polygone
+	~Polygone() 
+	{
+		delete longueurCotes; 	// On a alloué cette mémoire à la construction. 
+								// Si on ne la désalloue pas, une fois la classe détruite, 
+								// le pointeur longueurCotes ne pointera plus sur l'emplacement mémoire,
+								// mais ce dernier sera toujours marqué comme utilisé : on aura une fuite mémoire. 
+								// On appelle donc le destructeur défini pour un tableau d'entier. 
+		// On a pas besoin de supprimer la variable nombreCotes : 
+		// 
+	}
+}:
+```
 
 ## Introduction à l'héritage
 
