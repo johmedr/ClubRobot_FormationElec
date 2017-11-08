@@ -63,7 +63,7 @@ Lors de la création de constructeur, la question à se poser est :
 > "à partir de quelles données fournies par l'utilisateur peut/doit on 
 initialiser l'objet et ses membres ?"
 
-#### Construire un objet
+#### *Construire un objet*
 
 Une fois le constructeur défini, on peut s'en servir pour instancier des objets
 de notre classe. 
@@ -151,30 +151,76 @@ class Polygone
 {
 private: 
 	int nombreCotes; 	// avec un certain nombre de côtés, 
-	int * longueurCotes; // chacun ayant une certaine longueur (notre pointeur représente la premiere case d'un tableau) 
-						 // (Si cette ligne vous pose problème, revoyez le lien entre tableau et pointeur)
+	int * longueurCotes; // chacun ayant une certaine longueur 
+						 //(notre pointeur représente la premiere case d'un tableau) 
+						 // (Si cette ligne vous pose problème, 
+						 // revoyez le lien entre tableau et pointeur)
 public: 
 	
 	// À la construction d'un polygone 
 	Polygone(int nCotes) : 
-		nombreCotes(nCotes),   				// On construit nombreCotes à partir de nCotes
-		longueurCotes(new int[nCotes]) 		// On alloue de la mémoire pour pouvoir stocker la longueur de chaque côté
+		nombreCotes(nCotes),    // On construit nombreCotes à partir de nCotes
+		longueurCotes(new int[nCotes])    // On alloue de la mémoire pour pouvoir stocker la longueur de chaque côté
 	{}
 
 	// À la destruction d'un polygone
 	~Polygone() 
 	{
 		delete longueurCotes; 	// On a alloué cette mémoire à la construction. 
-								// Si on ne la désalloue pas, une fois la classe détruite, 
-								// le pointeur longueurCotes ne pointera plus sur l'emplacement mémoire,
-								// mais ce dernier sera toujours marqué comme utilisé : on aura une fuite mémoire. 
-								// On appelle donc le destructeur défini pour un tableau d'entier. 
+		// Si on ne la désalloue pas, une fois la classe détruite, 
+		// le pointeur longueurCotes ne pointera plus sur l'emplacement mémoire,
+		// mais ce dernier sera toujours marqué comme utilisé : on aura une fuite mémoire. 
+		// On appelle donc le destructeur défini pour un tableau d'entier. 
 		// On a pas besoin de supprimer la variable nombreCotes : 
-		// 
+		// celle-ci est détruite automatiquement (on n'a pas explicitement alloué de 
+		// la mémoire) 
 	}
 }:
 ```
 
+## Ajouter une méthode à notre classe
+
+Prenons la classe `Polygone` créée ci-dessus. On souhaite désormais pouvoir affecter 
+une longueur à chaque côté, individuellement. Pour celà, on souhaite que notre classe 
+fournisse un *service* en proposant une *méthode* de *portée publique* répondant
+à notre problème. 
+
+Pour celà, on va *déclarer* notre fonction dans la classe (on n'est cependant pas
+obligés de la *définir* dans la classe). Cette fonction prendra en argument un numéro
+de côté et une longueur, et retournera un booléen vrai si le numéro de côté est inférieur
+au nombre de côtés. 
+
+```C++
+class Polygone
+{
+	// ... On remet ici ce qui était ci-dessus
+
+	bool affecterLongueur(int cote, int longueur) 
+	{
+		bool opResult = false; 
+		if(cote < nombreCotes) 
+		{
+			longueurCotes[cote] = longueur; 
+			opResult = true; 
+		}
+		return true; 
+	}
+}
+```
+
+On pourra ensuite appeller la méthode de la manière suivante : 
+```C++ 
+Polygone lopoly(3); // Construction du polygône à trois côté
+
+// Côté 1, longueur 12
+lopoly.affecterLongueur(1, 12); 
+
+// Côté 2, longueur 19
+lopoly.affecterLongueur(2, 19); 
+
+// Côté 3, longueur 2
+lopoly.affecterLongueur(3, 2); 
+```
 
 
 ## Récapitulatif
