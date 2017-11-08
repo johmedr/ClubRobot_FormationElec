@@ -111,10 +111,11 @@ DigitalPortOut(PinName pin)
 
 Le C++ nous fournit une syntaxe plus simple et à privilégier : la liste d'initialisation. 
 ```C++
-// 							v---- C'est le début de la liste
+// 				   v---- C'est le début de la liste
 DigitalPortOut(PinName pin) : connectedPin(pin), statePin(false)
-//									^				^--- Appel au constructeur du type bool prenant comme argument un bool.
-//									|--- appel du constructeur de la classe PinName() prenant en argument un PinName.
+//				 ^                  ^--- Appel au constructeur du type bool 
+//				 | 			 prenant comme argument un bool.
+//				 |--- appel du constructeur de la classe PinName() prenant en argument un PinName.
 {} // <- Le corps de la fonction est vite, on a juste construit des objets.
 ```
 
@@ -160,7 +161,8 @@ public:
 	// À la construction d'un polygone 
 	Polygone(int nCotes) : 
 		nombreCotes(nCotes),    // On construit nombreCotes à partir de nCotes
-		longueurCotes(new int[nCotes])    // On alloue de la mémoire pour pouvoir stocker la longueur de chaque côté
+		longueurCotes(new int[nCotes])    // On alloue de la mémoire pour pouvoir 
+						  // stocker la longueur de chaque côté
 	{}
 
 	// À la destruction d'un polygone
