@@ -10,6 +10,7 @@ Le but maintenant est progresser un peu plus dans le monde des classes, et de d�
 fonctionnalités plus avancées comme l'héritage et le polymorphisme. On va également 
 utiliser la classe DigitalIn pour créer une entrée logique et interfacer les boutons.
 
+
 ## Créer une classe
 
 On a vu précédemment qu'une classe est une entité qui définit le comportement d'un type
@@ -78,6 +79,7 @@ DigitalPortOut * ptrSurPorc1 = new DigitalPortOut(); // On alloue de la mémoire
 DigitalPortOut * ptrSurPorc2 = new DigitalPortOut(D3); // On alloue de la mémoire à un pointeur avec un arg.
 
 ```
+
 
 #### *La liste d'initialisation*
 
@@ -173,7 +175,16 @@ public:
 }:
 ```
 
-## Introduction à l'héritage
+
+
+## Récapitulatif
+
+Les classes, ainsi que leur construction, destruction et l'utilisation de leur méthodes, on été abordées ici
+sous un certain angle. 
+
+Vous êtes invités à enrichir vos compétences en suivant la partie du tutoriel d'OpenClassroom qui y est consacrée (à savoir
+[cette page](https://openclassrooms.com/courses/programmez-avec-le-langage-c/les-classes-partie-1-2) et 
+[celle-ci](https://openclassrooms.com/courses/programmez-avec-le-langage-c/les-classes-partie-2-2).)
 
 ## À vous !
 
