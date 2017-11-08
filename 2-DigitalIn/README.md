@@ -234,5 +234,19 @@ Vous êtes invités à enrichir vos compétences en suivant la partie du tutorie
 
 ## À vous !
 
+Votre mission, si vous l'acceptez, est de créer deux classes : 
+  * une représentant toutes les sorties numériques, 
+  * une autre représentant toutes les entrées numériques (pour celà, renseignez-vous sur 
+  la classe DigitalIn, vous trouverez tout ce qu'il vous faut dans la doc. de mbed :+1: )
+
+Ces deux classes communiquent entre elles. On affecte au départ un état donné aux sorties. 
+Ensuite, l'utilisation des boutons permet de faire déplacer cet état sur la gauche (pour le bouton gauche)
+ou sur la droite (pour le bouton droit). 
+
+Ainsi, si les leds 2 et 3 sont initiallement allumées, alors deux appuis sur le bouton droit doivent permettre 
+de passer dans un état `leds 4 et 5` allumées. 
+
+- glhf - 
+
 ## [< Précédent](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut) | [Suivant >](https://github.com/yop0/ClubRobot_FormationElec/blob/master/3-AnalogIn)
  
