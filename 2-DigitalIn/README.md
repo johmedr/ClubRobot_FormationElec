@@ -10,19 +10,45 @@ Le but maintenant est progresser un peu plus dans le monde des classes, et de d�
 fonctionnalités plus avancées comme l'héritage et le polymorphisme. On va également 
 utiliser la classe DigitalIn pour créer une entrée logique et interfacer les boutons.
 
-
 ## Créer une classe
+
+### Arborescence des fichiers
+
+En c++, il trés courant de séparer la définition de l'implémentation. Peut être avez-vous déjà vu des fichiers `.h` (pour **h**eader) ou `.cpp`. La première est reservé à la définition d'une classe, tandis que le deuxième s'occupe de l'implémentation des méthodes définies dans le header.
+
+Il est toujours possible d'implémenter les méthodes dans le header, on les qualifient alors de **inline**.
+
+Ainsi, si on a la classe `Example` qui a une méthode `foo()`, nous aurions les fichiers suivants :
+
+* Example.h:
+	```c++
+	class Example {
+		void foo();
+		}
+	```
+* Example.cpp:
+	```c++
+	#include "Example.h" // Notez que l'on doit inclure les header de la classe
+	void Example::foo() { // Cette syntaxe permet de préciser quelle méthode de quelle classe on est en train d'implémenter.
+		std::cout << "Bonjour depuis foo"  << std::endl;
+	} 
+	```
+
+
+### Portée et visibilité
 
 On a vu précédemment qu'une classe est une entité qui définit le comportement d'un type
 d'objet. 
 
 Pour créer une classe, la syntaxe est la suivante : 
 
-```C++ 
+```c++ 
+DigitalPortOut.h:
+
 class DigitalPortOut // On définit la classe 'MaClasse'
 {
 	int m1; 	// Dans une classe, la portée par défaut est "privée". Ceci veut dire qu'on
-	bool f1();  // ne peut pas voir de l'extérieur de la classe ce qui est içi
+	bool f1();  // ne peut pas utiliser de l'extérieur de la classe ce qui est ici.
 
 public: 		// On passe explicitement en portée "publique". Tout le monde peut voir m2 
 	int m2;		// et utiliser f2. 
@@ -30,12 +56,29 @@ public: 		// On passe explicitement en portée "publique". Tout le monde peut vo
 
 private: 		// On repasse en portée "privée". Personne en dehors de la classe ne peut
 	int m3;  	// voir m3 ou utiliser f3. 
-	char f3();  // NB : f2 peut utiliser f3, car ils sont dans la même classe
+	char f3();  // NB : f2 peut utiliser f3, car ils sont dans la même classe.
 
 }; // Ne pas oublier ce point-virgule
 ```
 
-## Le constructeur
+Ainsi, la code suivant ne compilera pas, car on se trouve en dehors de la classe :
+```c++
+#include "DigitalPortOut.h" // On inclue la classe pour pouvoir l'utiliser.
+DigitalPortOut maClasse; // Cette ligne est expliquée dans la prochaine partie, elle permet d'instancier un objet.
+if (maClasse.f1()) { // On essaie d'appeler la méthode f1().
+	std::cout << std::to_string(maClasse.m1); // On essaie d'utiliser le membre m1.
+}
+```
+
+Cependant, le code suivant compilera car on est en train d'implémenter une méthode pour la classe, on a donc la visibilité sur tout ses membres :
+
+```c++
+bool DigitalPortOut::f1()  {
+	return this-> m1 > 10;
+}
+```
+
+### Le constructeur
 
 Le constructeur sert à déclarer comment le programme doit initialiser un objet d'une classe
 donnée, avec une jeu d'arguments donné. 
@@ -63,7 +106,7 @@ Lors de la création de constructeur, la question à se poser est :
 > "à partir de quelles données fournies par l'utilisateur peut/doit on 
 initialiser l'objet et ses membres ?"
 
-#### *Construire un objet*
+#### *Instancier un objet*
 
 Une fois le constructeur défini, on peut s'en servir pour instancier des objets
 de notre classe. 
@@ -71,7 +114,10 @@ de notre classe.
 Ceci se passe comme cela : 
 ```C++
 // Variables classiques
-DigitalPortOut monPorc; 	// On utilise aucun argument, appel au constructeur "DigitalPortOut()"
+DigitalPortOut monPorc; 	// On utilise aucun argument, appel au constructeur "DigitalPortOut()".
+// Si vous rajoutez des paranthèses, le compilateur va croire que vous déclarez une fonction, ce qui
+// va donner des erreurs de compilation folkloriques.
+
 DigitalPortOut monSecondPorc(A3); // On utilise "DigitalPortOut(PinName pin)"
 
 // Pointeurs
@@ -96,7 +142,7 @@ public:
 	// ...
 }
 ```
-On souhaiterais construire un PinName, initialisé par l'utilisateur, ainsi
+On souhaiterais instancier un PinName, initialisé par l'utilisateur, ainsi
 qu'un état booléen, initialisé par défaut à `false`. 
 
 Pour cela, on pourrait utiliser le code suivant pour le constructeur. 
@@ -116,13 +162,13 @@ DigitalPortOut(PinName pin) : connectedPin(pin), statePin(false)
 //				 ^                  ^--- Appel au constructeur du type bool 
 //				 | 			 prenant comme argument un bool.
 //				 |--- appel du constructeur de la classe PinName() prenant en argument un PinName.
-{} // <- Le corps de la fonction est vite, on a juste construit des objets.
+{} // <- Le corps de la fonction est vide, on a juste construit des objets.
 ```
 
 
 
 
-## Le destructeur
+### Le destructeur
 On a appris la syntaxe du constructeur, permettant d'indiquer comment initialiser notre classe. 
 Maintenant, on va voir comment indiquer au programme la manière de détruire un objet de notre classe. 
 
@@ -248,7 +294,7 @@ ou sur la droite (pour le bouton droit).
 Ainsi, si les leds 2 et 3 sont initiallement allumées, alors deux appuis sur le bouton droit doivent permettre 
 de passer dans un état `leds 4 et 5` allumées. 
 
-- glhf - 
+\- glhf - 
 
 ## [< Précédent](https://github.com/yop0/ClubRobot_FormationElec/blob/master/1-DigitalOut) | [Suivant >](https://github.com/yop0/ClubRobot_FormationElec/blob/master/3-AnalogIn)
  
