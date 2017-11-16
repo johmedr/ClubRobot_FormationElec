@@ -1,5 +1,7 @@
 # 0 - Prerequis
 
+[Lien ressources carte nucléo](http://www.st.com/content/ccc/resource/technical/document/user_manual/e3/0e/88/05/e8/74/43/a0/DM00231744.pdf/files/DM00231744.pdf/jcr:content/translations/en.DM00231744.pdf)
+
 ## Compétences et ressources utiles
 
 Le language C++, basé sur la syntaxe de C, est utilisé pour 
